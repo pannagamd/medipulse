@@ -13,10 +13,7 @@ COPY data ./data
 COPY alembic.ini ./alembic.ini
 
 # Copy full medicine data files at root level (A/B/C standalone + dosage + symptoms + D-Z ZIP)
-COPY All_A_Medicines_With_Food_Interactions.xlsx ./
-COPY All_B_Medicines_With_Food_Interactions.xlsx ./
-COPY All_C_Medicines_With_Food_Interactions.xlsx ./
-COPY ab.xlsx ./
+# Symptom rules data file (root level)
 COPY symptoms.xlsx ./
 COPY workspace-*.zip ./
 
