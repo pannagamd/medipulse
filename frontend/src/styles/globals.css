@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --background: 150 30% 98%;
+  --foreground: 174 35% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 174 35% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 174 35% 10%;
+  --primary: 171 75% 30%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 164 50% 94%;
+  --secondary-foreground: 171 60% 20%;
+  --muted: 160 24% 95%;
+  --muted-foreground: 170 12% 46%;
+  --accent: 164 50% 94%;
+  --accent-foreground: 171 60% 20%;
+  --destructive: 4 82% 56%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 164 28% 88%;
+  --input: 164 28% 88%;
+  --ring: 171 75% 30%;
+}
+
+/* ── Base resets ────────────────────────────────────────────────────────────── */
+* {
+  @apply border-border;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-feature-settings: 'ss01' on, 'ss03' on, 'cv02' on;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+::selection {
+  background: rgba(20, 184, 166, 0.18);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.28);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.5);
+}
+
+/* ── Utility classes ────────────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 60px -20px rgba(15, 118, 110, 0.22);
+}
+
+.mesh-bg {
+  background-image: linear-gradient(rgba(15, 118, 110, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hero-glow {
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(20, 184, 166, 0.12), transparent);
+}
+
+/* ── Focus ring ─────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}

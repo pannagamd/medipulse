@@ -1,0 +1,5 @@
+generic_name,brand_name,composition,dosage_form,strength,side_effects,precautions,contraindications,storage_instructions,usage_guidelines,aliases
+Paracetamol,Calpol,Paracetamol,tablet,500 mg,Nausea;Rash,Avoid overdose;Use caution in liver disease,Severe liver disease,Store below 25C,Use as directed by clinician,Acetaminophen
+Ibuprofen,Brufen,Ibuprofen,tablet,400 mg,Stomach upset;Dizziness,Take with food;Use caution in asthma,Kidney disease;Active stomach ulcer,Store in a cool dry place,Use as directed by clinician,Nurofen
+Amoxicillin,Mox,Amoxicillin,capsule,500 mg,Diarrhea;Rash,Check allergy history,Penicillin allergy,Store below 25C,Complete prescribed course,
+

@@ -1,0 +1,5 @@
+drug_a,drug_b,severity,explanation,mechanism,recommendations,source_url,source_version
+Aspirin,Warfarin,dangerous,May increase bleeding risk,Additive anticoagulant or antiplatelet effect,Avoid unless clinician approves;Monitor bleeding,https://ddinter.scbdd.com/,sample
+Ibuprofen,Warfarin,dangerous,May increase bleeding risk,NSAID-related bleeding risk,Avoid combination unless directed;Monitor closely,https://ddinter.scbdd.com/,sample
+Paracetamol,Ibuprofen,moderate,Often used together but dosing and health conditions matter,Different analgesic mechanisms,Review dose limits and kidney/liver risks,local-sample,sample
+
