@@ -24,6 +24,7 @@ import sys
 import uuid
 import zipfile
 from pathlib import Path
+from app.models.medicine import ImportBatch, Medicine, MedicineAlias, MedicineSource
 
 # ---------------------------------------------------------------------------
 # Allow running from project root: python scripts/seed_data.py
@@ -454,7 +455,21 @@ def main():
         all_records = abc_records + zip_records
         logger.info("      Total records to process: %d", len(all_records))
 
+        batch = ImportBatch(
+            id=IMPORT_BATCH,
+            source_name=SOURCE_NAME,
+            source_type="xlsx",
+            filename="All_A/B/C_Medicines_With_Food_Interactions.xlsx + ab.xlsx",
+            records_total=len(all_records),
+            status="completed",
+        )
+        db.add(batch)
+        db.flush()
+
         ins, skip = upsert_medicines(db, all_records, dosage_map)
+
+        batch.records_imported = ins
+
         db.commit()
         logger.info("      Inserted: %d  |  Enriched existing: %d", ins, skip)
 
