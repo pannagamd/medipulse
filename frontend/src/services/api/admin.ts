@@ -25,8 +25,9 @@ export async function importDdinter(file: File, sourceName = 'DDInter') {
   formData.append('file', file);
   formData.append('source_name', sourceName);
 
-  const { data } = await api.post<Record<string, number>>('/admin/imports/ddinter', formData);
-  return data;
+  const { data } = await api.post<Record<string, number>>('/admin/imports/ddinter', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
 }
 
 export async function listAuditLogs(limit = 50, offset = 0, action?: string, actorUserId?: string) {
