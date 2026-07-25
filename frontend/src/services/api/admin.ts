@@ -14,7 +14,9 @@ export async function importMedicines(file: File, sourceName = 'local') {
   formData.append('file', file);
   formData.append('source_name', sourceName);
 
-  const { data } = await api.post<ImportResult>('/admin/imports/medicines', formData);
+  const { data } = await api.post<ImportResult>('/admin/imports/medicines', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
   return data;
 }
 
